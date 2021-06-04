@@ -1,0 +1,32 @@
+name: lustre_exporter_slurm
+version: 0.1.0
+
+authors:
+  - Adam Spencer <adam_spencer@sfu.ca>
+
+description: |
+  lustre_exporter_slurm for combining queries from lustre_exporter GO(lustre_exporter_hpe)
+  with slurmdb data to convert SLURM_JOB_ID lustre jobid_var jobstats into user, account
+  and sometimes application(head node, etc.) data for better tracking in Prometheus.
+  Utilize config.ini.dist to make your config.ini
+  Inspiration taken largley from- https://github.com/guilbaults/lustre_exporter_slurm
+
+license: MIT
+
+targets:
+  lustre_exporter_slurm:
+    main: src/lustre_exporter_slurm.cr
+
+dependencies:
+  ldap:
+    github: spider-gazelle/crystal-ldap
+  kemal:
+    github: kemalcr/kemal
+  lru-cache:
+    github: nicolab/crystal-lru-cache
+  db:
+    github: crystal-lang/crystal-db
+  mysql:
+    github: crystal-lang/crystal-mysql
+
+crystal: 1.0.0

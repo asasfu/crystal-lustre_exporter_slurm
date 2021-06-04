@@ -1,0 +1,15 @@
+[api]
+local_port = 60010
+[slurmdb]
+host = slurmdb
+port = 3306
+dbname = slurmdb
+user = slurmdb_job_table_readonlyuser
+password = PUT_YOUR_READONLY_DB_USER_PW_HERE
+job_table = <PUT_YOUR_CLUSTERNAME_HERE>_job_table
+[ldap]
+start_tls = false
+ssl = true
+server = <your_local_ldap_server>
+port = 636
+search_base = ou=People,dc=computecanada,dc=ca
